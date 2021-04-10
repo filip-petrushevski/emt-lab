@@ -1,7 +1,7 @@
 package com.emt.lab.model;
 
 import com.emt.lab.enums.BookCategory;
-import lombok.AllArgsConstructor;
+import com.emt.lab.exception.BadRequestException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -28,6 +28,10 @@ public class Book implements Serializable {
     private Integer availableCopies;
 
     public void decreaseCopies() {
-        this.availableCopies--;
+        if (availableCopies > 0) {
+            this.availableCopies--;
+        } else {
+            throw new BadRequestException("No more available copies");
+        }
     }
 }
