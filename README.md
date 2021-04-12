@@ -1,1 +1,1 @@
-# Faculty project for the subject EMT
+# Faculty project for the subject EMT - Server side
